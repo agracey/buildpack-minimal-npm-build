@@ -1,3 +1,3 @@
 #!/bin/bash
 
-echo "To use the Minimal Node Runner, specify it. This is so we don't ever override default" && exit 1 
+echo "To use the Minimal NPM Build, specify it. This is so we don't ever override default" && exit 1 

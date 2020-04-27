@@ -2,3 +2,16 @@
 
 ## Nothing to finalize since this only installs deps
 
+
+export BUILDPACK_DIR=`dirname $(readlink -f ${BASH_SOURCE%/*})`
+BUILD_DIR=$1
+CACHE_DIR=$2
+DEPS_DIR=$3/$4
+
+echo "Running Finalize Script of NPM BUILD buildpack"
+
+# Add node bin as PATH for running npm below.
+export PATH=$DEPS_DIR/node/bin:$PATH
+
+# Install npm dependencies specified
+pushd $BUILD_DIR && npm install && npm run build && popd 
