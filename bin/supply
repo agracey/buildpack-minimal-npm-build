@@ -27,3 +27,9 @@ if [ ! -f $CACHE_DIR/node.tgz ]; then
   curl https://nodejs.org/download/release/v$NODE_VERSION/node-v$NODE_VERSION-linux-x64.tar.gz > $CACHE_DIR/node.tgz
   tar -xzf $CACHE_DIR/node.tgz -C $CACHE_DIR/
 fi
+
+# Add node bin as PATH for running npm below.
+export PATH=$DEPS_DIR/node/bin:$PATH
+
+# Install npm dependencies specified
+pushd $BUILD_DIR && npm install && npm run build && popd 
