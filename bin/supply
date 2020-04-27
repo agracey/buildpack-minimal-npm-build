@@ -19,6 +19,10 @@ BUILD_DIR=$1
 CACHE_DIR=$2
 DEPS_DIR=$3/$4
 
+echo "ENV"
+env 
+
+
 if [ ! -f $CACHE_DIR/node.tgz ]; then
   curl https://nodejs.org/download/release/v$NODE_VERSION/node-v$NODE_VERSION-linux-x64.tar.gz > $CACHE_DIR/node.tgz
   tar -xzf $CACHE_DIR/node.tgz -C $CACHE_DIR/
@@ -32,4 +36,4 @@ cp -r $CACHE_DIR/node-v$NODE_VERSION-linux-x64 $DEPS_DIR/node
 
 
 echo "DEPS" 
-ls -la $DEPS_DIR/node
+ls -la $DEPS_DIR/node/bin
