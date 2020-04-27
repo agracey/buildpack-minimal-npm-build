@@ -1,0 +1,3 @@
+#!/bin/bash
+
+echo "To use the Minimal Node Runner, specify it. This is so we don't ever override default" && exit 1 
