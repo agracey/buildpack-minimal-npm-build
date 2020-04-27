@@ -8,6 +8,8 @@ BUILD_DIR=$1
 CACHE_DIR=$2
 DEPS_DIR=$3/$4
 
+export npm_config_cache=$2/npm
+
 echo "Running Finalize Script of NPM BUILD buildpack"
 
 # Add node bin as PATH for running npm below.

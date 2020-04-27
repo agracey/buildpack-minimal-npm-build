@@ -19,6 +19,7 @@ BUILD_DIR=$1
 CACHE_DIR=$2
 DEPS_DIR=$3/$4
 
+export npm_config_cache=$2/npm
 
 if [ ! -f $CACHE_DIR/node.tgz ]; then
   curl https://nodejs.org/download/release/v$NODE_VERSION/node-v$NODE_VERSION-linux-x64.tar.gz > $CACHE_DIR/node.tgz
