@@ -19,9 +19,6 @@ BUILD_DIR=$1
 CACHE_DIR=$2
 DEPS_DIR=$3/$4
 
-echo "ENV"
-env 
-
 
 if [ ! -f $CACHE_DIR/node.tgz ]; then
   curl https://nodejs.org/download/release/v$NODE_VERSION/node-v$NODE_VERSION-linux-x64.tar.gz > $CACHE_DIR/node.tgz
@@ -30,6 +27,10 @@ fi
 
 # Add node bin as PATH for running npm below.
 export PATH=$DEPS_DIR/node/bin:$PATH
+
+ls -la $DEPS_DIR
+ls -la $DEPS_DIR/node/bin
+
 
 # Install npm dependencies specified
 pushd $BUILD_DIR && npm install && npm run build && popd 
