@@ -26,10 +26,8 @@ if [ ! -f $CACHE_DIR/node.tgz ]; then
 fi
 
 # Add node bin as PATH for running npm below.
-export PATH=$DEPS_DIR/node/bin:$PATH
+export PATH=$CACHE_DIR/node-v$NODE_VERSION-linux-x64/bin:$PATH
 
-ls -la $DEPS_DIR
-ls -la $DEPS_DIR/node/bin
 
 
 # Install npm dependencies specified
